@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="webserver2" location="/home/overlord/ece520/assignments/lab11/software/iperf_1/webserver2" platform="/home/overlord/ece520/assignments/lab11/software/iperf_1/webserver_fw_wrapper/export/webserver_fw_wrapper/webserver_fw_wrapper.xpfm" platformUID="xilinx:zybo-z7-10::0.0(custom)" systemProject="webserver2_system" sysConfig="webserver_fw_wrapper" runtime="cpp" cpu="standalone_ps7_cortexa9_0" cpuInstance="ps7_cortexa9_0" os="standalone" mssSignature="f90fa2d14a76dc400e27de9ff8666207">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.596477609">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.1060331283" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="lwip_tcp_perf_server" hasBspSettings="true"/>
+</sdkproject:SdkProject>

@@ -1,0 +1,106 @@
+08:36:46 INFO  : Launching XSCT server: xsct -n  -interactive /home/overlord/ece520/assignments/lab11/software/iperf_1/temp_xsdb_launch_script.tcl
+08:36:47 INFO  : Platform repository initialization has completed.
+08:36:47 INFO  : Registering command handlers for Vitis TCF services
+08:36:56 INFO  : XSCT server has started successfully.
+08:37:17 INFO  : plnx-install-location is set to ''
+08:37:17 INFO  : Successfully done setting XSCT server connection channel  
+08:37:17 INFO  : Successfully done query RDI_DATADIR 
+08:37:17 INFO  : Successfully done setting workspace for the tool. 
+08:39:01 INFO  : Result from executing command 'getProjects': webserver_fw_wrapper
+08:39:01 INFO  : Result from executing command 'getPlatforms': 
+08:39:01 WARN  : An unexpected exception occurred in the module 'platform project logging'
+08:39:01 INFO  : Platform 'webserver_fw_wrapper' is added to custom repositories.
+08:39:15 INFO  : Platform 'webserver_fw_wrapper' is added to custom repositories.
+08:43:20 INFO  : Result from executing command 'getProjects': webserver_fw_wrapper
+08:43:20 INFO  : Result from executing command 'getPlatforms': webserver_fw_wrapper|/home/overlord/ece520/assignments/lab11/software/iperf_1/webserver_fw_wrapper/export/webserver_fw_wrapper/webserver_fw_wrapper.xpfm
+08:43:23 INFO  : Checking for BSP changes to sync application flags for project 'webserver2'...
+08:46:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+08:46:05 INFO  : Jtag cable 'Digilent Zybo Z7 210351B3FCBFA' is selected.
+08:46:05 INFO  : 'jtag frequency' command is executed.
+08:46:05 INFO  : Context for 'APU' is selected.
+08:46:05 INFO  : System reset is completed.
+08:46:08 INFO  : 'after 3000' command is executed.
+08:46:09 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351B3FCBFA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351B3FCBFA-13722093-0"}' command is executed.
+08:46:10 INFO  : Device configured successfully with "/home/overlord/ece520/assignments/lab11/software/iperf_1/webserver2/_ide/bitstream/webserver_fw_wrapper.bit"
+08:46:10 INFO  : Context for 'APU' is selected.
+08:46:10 INFO  : Hardware design and registers information is loaded from '/home/overlord/ece520/assignments/lab11/software/iperf_1/webserver_fw_wrapper/export/webserver_fw_wrapper/hw/webserver_fw_wrapper.xsa'.
+08:46:10 INFO  : 'configparams force-mem-access 1' command is executed.
+08:46:10 INFO  : Context for 'APU' is selected.
+08:46:10 INFO  : Sourcing of '/home/overlord/ece520/assignments/lab11/software/iperf_1/webserver2/_ide/psinit/ps7_init.tcl' is done.
+08:46:10 INFO  : 'ps7_init' command is executed.
+08:46:10 INFO  : 'ps7_post_config' command is executed.
+08:46:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+08:46:11 INFO  : The application '/home/overlord/ece520/assignments/lab11/software/iperf_1/webserver2/Debug/webserver2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+08:46:11 INFO  : 'configparams force-mem-access 0' command is executed.
+08:46:11 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351B3FCBFA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351B3FCBFA-13722093-0"}
+fpga -file /home/overlord/ece520/assignments/lab11/software/iperf_1/webserver2/_ide/bitstream/webserver_fw_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/overlord/ece520/assignments/lab11/software/iperf_1/webserver_fw_wrapper/export/webserver_fw_wrapper/hw/webserver_fw_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/overlord/ece520/assignments/lab11/software/iperf_1/webserver2/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/overlord/ece520/assignments/lab11/software/iperf_1/webserver2/Debug/webserver2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+08:46:11 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+08:46:11 INFO  : 'con' command is executed.
+08:46:11 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+08:46:11 INFO  : Disconnected from the channel tcfchan#2.
+08:57:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+08:57:17 INFO  : Jtag cable 'Digilent Zybo Z7 210351B3FCBFA' is selected.
+08:57:17 INFO  : 'jtag frequency' command is executed.
+08:57:17 INFO  : Context for 'APU' is selected.
+08:57:17 INFO  : System reset is completed.
+08:57:20 INFO  : 'after 3000' command is executed.
+08:57:20 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351B3FCBFA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351B3FCBFA-13722093-0"}' command is executed.
+08:57:21 INFO  : Device configured successfully with "/home/overlord/ece520/assignments/lab11/software/iperf_1/webserver2/_ide/bitstream/webserver_fw_wrapper.bit"
+08:57:21 INFO  : Context for 'APU' is selected.
+08:57:21 INFO  : Hardware design and registers information is loaded from '/home/overlord/ece520/assignments/lab11/software/iperf_1/webserver_fw_wrapper/export/webserver_fw_wrapper/hw/webserver_fw_wrapper.xsa'.
+08:57:21 INFO  : 'configparams force-mem-access 1' command is executed.
+08:57:21 INFO  : Context for 'APU' is selected.
+08:57:21 INFO  : Sourcing of '/home/overlord/ece520/assignments/lab11/software/iperf_1/webserver2/_ide/psinit/ps7_init.tcl' is done.
+08:57:22 INFO  : 'ps7_init' command is executed.
+08:57:22 INFO  : 'ps7_post_config' command is executed.
+08:57:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+08:57:22 INFO  : The application '/home/overlord/ece520/assignments/lab11/software/iperf_1/webserver2/Debug/webserver2.elf' is downloaded to processor 'ps7_cortexa9_0'.
+08:57:22 INFO  : 'configparams force-mem-access 0' command is executed.
+08:57:22 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo Z7 210351B3FCBFA" && level==0 && jtag_device_ctx=="jsn-Zybo Z7-210351B3FCBFA-13722093-0"}
+fpga -file /home/overlord/ece520/assignments/lab11/software/iperf_1/webserver2/_ide/bitstream/webserver_fw_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/overlord/ece520/assignments/lab11/software/iperf_1/webserver_fw_wrapper/export/webserver_fw_wrapper/hw/webserver_fw_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/overlord/ece520/assignments/lab11/software/iperf_1/webserver2/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/overlord/ece520/assignments/lab11/software/iperf_1/webserver2/Debug/webserver2.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+08:57:22 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+08:57:22 INFO  : 'con' command is executed.
+08:57:22 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+08:57:22 INFO  : Disconnected from the channel tcfchan#3.
