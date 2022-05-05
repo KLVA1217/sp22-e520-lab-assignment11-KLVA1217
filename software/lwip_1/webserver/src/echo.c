@@ -65,7 +65,8 @@ err_t recv_callback(void *arg, struct tcp_pcb *tpcb,
 	/* echo back the payload */
 	/* in this case, we assume that the payload is < TCP_SND_BUF */
 	if (tcp_sndbuf(tpcb) > p->len) {
-		err = tcp_write(tpcb, p->payload, p->len, 1);
+		err = tcp_write(tpcb, p->payload, p->len, 1); // Echos what it was received
+		//err = tcp_write(tpcb, "Got msg\r\n", 10, 1); // Only display "Got msg"
 	} else
 		xil_printf("no space in tcp_sndbuf\n\r");
 
@@ -97,7 +98,7 @@ int start_application()
 {
 	struct tcp_pcb *pcb;
 	err_t err;
-	unsigned port = 7;
+	unsigned port = 6001;
 
 	/* create new TCP PCB structure */
 	pcb = tcp_new_ip_type(IPADDR_TYPE_ANY);
